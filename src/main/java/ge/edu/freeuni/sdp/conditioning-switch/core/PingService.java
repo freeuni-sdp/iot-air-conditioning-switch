@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.conditioning-switch.core;
+/*package ge.edu.freeuni.sdp.conditioning-switch.core;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -28,3 +28,4 @@ public class PingService {
   }
 
 }
+*/

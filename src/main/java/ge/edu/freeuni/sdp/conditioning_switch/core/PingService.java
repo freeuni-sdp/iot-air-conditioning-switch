@@ -1,4 +1,4 @@
-/*package ge.edu.freeuni.sdp.conditioning-switch.core;
+package ge.edu.freeuni.sdp.conditioning_switch.core;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -17,15 +17,4 @@ public class PingService {
   public Response get() {
     return Response.ok().build();
   }
-
-  @GET
-  @Path("{id}")
-  public TaskDo getJson(@PathParam("id") String id) {
-    TaskDo task = new TaskDo();
-    task.setId(id);
-    task.setText("test");
-    return task;
-  }
-
 }
-*/

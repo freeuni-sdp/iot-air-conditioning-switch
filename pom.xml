@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>ge.edu.freeuni.sdp.xo</groupId>
+	<groupId>ge.edu.freeuni.sdp.iot.switch_air_conditioning</groupId>
 	<artifactId>iot-air-conditioning-switch</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>

@@ -5,5 +5,36 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/javax.ws.rs-api-2.0.rev.A.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Downloads/jaxrs-ri-2.23.1/jaxrs-ri/ext" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/Downloads/jaxrs-ri-2.23.1/jaxrs-ri/ext" />
+        </SOURCES>
+        <jarDirectory url="file://$USER_HOME$/Downloads/jaxrs-ri-2.23.1/jaxrs-ri/ext" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/Downloads/jaxrs-ri-2.23.1/jaxrs-ri/ext" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/jaxrs-ri-2.23.1/jaxrs-ri/api/javax.ws.rs-api-2.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

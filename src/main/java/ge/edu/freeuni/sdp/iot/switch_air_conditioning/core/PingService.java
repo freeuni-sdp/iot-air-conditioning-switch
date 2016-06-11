@@ -1,9 +1,4 @@
-package ge.edu.freeuni.sdp.conditioning_switch.core;
-
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+package ge.edu.freeuni.sdp.iot.switch_air_conditioning.core;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;

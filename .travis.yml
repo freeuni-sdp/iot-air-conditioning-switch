@@ -4,3 +4,8 @@ jdk:
   - oraclejdk8
 
 script: mvn package
+
+deploy:
+  provider: heroku
+  api_key: b49644d8-3cbc-4d49-bebc-6a7e870bdb4a
+    secure: iot-air-conditioning-switch

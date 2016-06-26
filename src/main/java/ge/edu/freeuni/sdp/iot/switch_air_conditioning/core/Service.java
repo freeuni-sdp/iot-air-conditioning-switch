@@ -29,7 +29,6 @@ public class Service {
         CloudStorage cloud = new CloudStorage();
         SwitchEntity sw = cloud.retrieveSwitch(id);
         JsonWrapper wr = new JsonWrapper(sw.getStatus());
-        if (wr == null) throw new NotFoundException();
         return wr;
     }
 

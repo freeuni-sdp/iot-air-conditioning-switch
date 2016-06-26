@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.iot.switch_air_conditioning.service;
+package ge.edu.freeuni.sdp.iot.switch_air_conditioning.core;
 import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.CloudStorage;
 import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.SwitchEntity;
 import javax.ws.rs.*;

@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.iot.switch_air_conditioning.service;
+package ge.edu.freeuni.sdp.iot.switch_air_conditioning.core;
 import javax.xml.bind.annotation.XmlRootElement;
 
 

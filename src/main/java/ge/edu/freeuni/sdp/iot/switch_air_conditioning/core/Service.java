@@ -26,12 +26,10 @@ public class Service {
     @Path("/houses/{house_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public JsonWrapper retrieveSwitch(@PathParam("house_id") String id){
-        System.out.println("GEEET PLZZZ");
         CloudStorage cloud = new CloudStorage();
-        System.out.println("STOcre");
         SwitchEntity sw = cloud.retrieveSwitch(id);
         JsonWrapper wr = new JsonWrapper(sw.getStatus());
-        System.out.println("DAMPALIMATXOVARi");
+        if (wr == null) throw new NotFoundException();
         return wr;
     }
 

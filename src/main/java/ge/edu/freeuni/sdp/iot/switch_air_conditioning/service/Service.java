@@ -10,7 +10,7 @@ public class Service {
     @Path("/houses/{house_id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response insertSwitch(@PathParam("id") String id, JsonWrapper w){
+    public Response insertSwitch(@PathParam("house_id") String id, JsonWrapper w){
         System.out.println("got to post");
         SwitchEntity sw =  new SwitchEntity(id);
         System.out.println("created switch entry");
@@ -24,7 +24,7 @@ public class Service {
     @GET
     @Path("/houses/{house_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public JsonWrapper retrieveSwitch(@PathParam("id") String id){
+    public JsonWrapper retrieveSwitch(@PathParam("house_id") String id){
         CloudStorage cloud = new CloudStorage();
         SwitchEntity sw = cloud.retrieveSwitch(id);
         JsonWrapper wr = new JsonWrapper(sw.getStatus());

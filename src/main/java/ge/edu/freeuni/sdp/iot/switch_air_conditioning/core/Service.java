@@ -4,6 +4,7 @@ import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.SwitchEntity;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
+@Path("/")
 public class Service {
 
     @POST

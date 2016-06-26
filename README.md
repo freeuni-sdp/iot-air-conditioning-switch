@@ -6,4 +6,4 @@ IoT მოწყობილობაზე შეერთებულია �
 |                    |                                 |
 |--------------------|---------------------------------|
 | API Documentation | http://docs.airconditioningswitch.apiary.io/ |
-| Deployment     | http://freeuni-iot-air-conditioning-switch.herokuapp.com/webapi/ |
+| Deployment     | https://iot-air-conditioning-switch.herokuapp.com/ |

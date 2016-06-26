@@ -11,13 +11,13 @@ public class Service {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response insertSwitch(@PathParam("id") String id, JsonWrapper w){
-        System.out.print("got to post");
+        System.out.println("got to post");
         SwitchEntity sw =  new SwitchEntity(id);
-        System.out.print("created switch entry");
+        System.out.println("created switch entry");
         sw.setStatus(w.getStatus());
         CloudStorage cloud = new CloudStorage();
         cloud.insertOrReplaceSwitch(sw);
-        System.out.print("inserted entry");
+        System.out.println("inserted entry");
         return Response.ok().build();
     }
 

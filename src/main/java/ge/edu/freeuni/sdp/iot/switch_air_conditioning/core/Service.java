@@ -3,6 +3,8 @@ import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.CloudStorage;
 import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.SwitchEntity;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 
 @Path("/")
 public class Service {
@@ -12,13 +14,14 @@ public class Service {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response insertSwitch(@PathParam("house_id") String id, JsonWrapper w){
-        System.out.println("got to post");
         SwitchEntity sw =  new SwitchEntity(id);
-        System.out.println("created switch entry");
         sw.setStatus(w.getStatus());
         CloudStorage cloud = new CloudStorage();
         cloud.insertOrReplaceSwitch(sw);
-        System.out.println("inserted entry");
+
+        Client client = ClientBuilder.newClient();
+        String url =  "https://iot-sim-house.herokuapp.com/webapi/bath/vent-switch/" + w.getStatus();
+
         return Response.ok().build();
     }
 

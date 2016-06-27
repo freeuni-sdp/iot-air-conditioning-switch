@@ -1,10 +1,15 @@
 package ge.edu.freeuni.sdp.iot.switch_air_conditioning.core;
 import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.CloudStorage;
 import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.SwitchEntity;
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.jackson.JacksonFeature;
+
 import javax.ws.rs.*;
-import javax.ws.rs.core.*;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("/")
 public class Service {
@@ -19,8 +24,13 @@ public class Service {
         CloudStorage cloud = new CloudStorage();
         cloud.insertOrReplaceSwitch(sw);
 
-        Client client = ClientBuilder.newClient();
-        String url =  "https://iot-sim-house.herokuapp.com/webapi/bath/vent-switch/" + w.getStatus();
+        String url =  "https://iot-sim-house.herokuapp.com/webapi/conditioner/{house_id}";
+
+        ClientConfig config = new ClientConfig().register(JacksonFeature.class);
+        Client client = ClientBuilder.newClient(config);
+        client.target(url)
+                .request()
+                .post(Entity.entity(w, MediaType.APPLICATION_JSON_TYPE));
 
         return Response.ok().build();
     }

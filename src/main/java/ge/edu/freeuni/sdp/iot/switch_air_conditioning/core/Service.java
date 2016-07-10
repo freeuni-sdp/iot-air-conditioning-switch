@@ -24,7 +24,7 @@ public class Service {
         CloudStorage cloud = new CloudStorage();
         cloud.insertOrReplaceSwitch(sw);
 
-        String url =  "https://iot-sim-house.herokuapp.com/webapi/conditioner/{house_id}";
+        String url =  "https://iot-sim-house.herokuapp.com/webapi/conditioner/"+id;
 
         ClientConfig config = new ClientConfig().register(JacksonFeature.class);
         Client client = ClientBuilder.newClient(config);

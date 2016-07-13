@@ -10,9 +10,6 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 
-/**
- * Created by Giglema on 7/13/2016.
- */
 public class CloudRepository implements Repository {
 
     @Override

@@ -1,14 +1,20 @@
 package ge.edu.freeuni.sdp.iot.switch_air_conditioning.model;
 
-/**
- * Created by Giglema on 7/13/2016.
- */
 public class RepositoryFactory{
 
     private static boolean isTest = false;
+    private static FakeRepository TestRepository;
+
+    public static void clearTestRepository(){
+        if (TestRepository!=null)
+            TestRepository.clear();
+    }
+
     public static Repository getRepository(){
         if (isTest) {
-            return new FakeRepository();
+            if (TestRepository == null)
+                TestRepository = new FakeRepository();
+            return TestRepository;
         } else {
             return new CloudRepository();
         }

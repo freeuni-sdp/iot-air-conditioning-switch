@@ -4,9 +4,6 @@ import ge.edu.freeuni.sdp.iot.switch_air_conditioning.core.JsonWrapper;
 
 import java.util.HashMap;
 
-/**
- * Created by Giglema on 7/13/2016.
- */
 public class FakeRepository implements Repository{
     private HashMap<String, String> houseConditions;
 
@@ -22,5 +19,9 @@ public class FakeRepository implements Repository{
     @Override
     public JsonWrapper retrieveSwitch(String id) {
         return new JsonWrapper(houseConditions.get(id));
+    }
+
+    public void clear(){
+        houseConditions.clear();
     }
 }

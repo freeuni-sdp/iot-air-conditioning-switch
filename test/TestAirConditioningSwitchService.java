@@ -2,21 +2,17 @@ import ge.edu.freeuni.sdp.iot.switch_air_conditioning.core.JsonWrapper;
 import ge.edu.freeuni.sdp.iot.switch_air_conditioning.core.Service;
 import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.Repository;
 import ge.edu.freeuni.sdp.iot.switch_air_conditioning.model.RepositoryFactory;
-import org.glassfish.jersey.client.ClientConfig;
-import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
-import org.junit.Before;
 import org.junit.Test;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class TestAirConditioningSwitchService extends JerseyTest{
 
@@ -66,5 +62,33 @@ public class TestAirConditioningSwitchService extends JerseyTest{
             RepositoryFactory.setTestRepositoryStatus(false);
         }
     }
+
+
+
+    @Test
+    public void TestGetValidStatus(){
+        try{
+            RepositoryFactory.clearTestRepository();
+            RepositoryFactory.setTestRepositoryStatus(true);
+            Repository repository = RepositoryFactory.getRepository();
+            String id = "validID";
+            String status = "*";
+            repository.insertSwitch(id,new JsonWrapper(status));
+            String url =  "/houses/"+id;
+            JsonWrapper result = target(url)
+                    .request()
+                    .get(JsonWrapper.class);
+            //assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+            assertEquals(repository.retrieveSwitch(id).getStatus(),result.getStatus());
+        }
+        finally{
+            RepositoryFactory.setTestRepositoryStatus(false);
+        }
+    }
+
+
+
+
+
 
 }

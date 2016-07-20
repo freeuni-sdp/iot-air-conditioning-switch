@@ -17,9 +17,9 @@ public class CloudStorage {
     static {
         tableName = "witches";
         storageConnectionString =
-                "DefaultEndpointsProtocol=http;" +
-                        "AccountName=uto;" +
-                        "AccountKey=CpYMHzjbYSqJZli6EA75W3anJBCQBN2V4IZFKGn38MsCX8SDX+v/hV2vfk9mk5FeF6X1KInEaT5SRUMgeeuqBw==";
+                "DefaultEndpointsProtocol=http;"
+                        + "AccountName=freeunisdptodo;"
+                        + "AccountKey=+UKHsHFQUWDjoHT1S7q4Ivc1phivLmXwWESvpcRCCJwhs1BnShkaFOOQs+BmI4XWtNnyg78S6ovbD2J5QCKxsQ==";
     }
 
 
